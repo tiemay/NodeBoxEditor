@@ -3,7 +3,7 @@
 all: bin nbe
 
 nbe: src/FileFormat/FileFormat.o src/FileFormat/Lua.o src/FileFormat/MTC.o src/FileFormat/NBE.o src/Configuration.o src/Editor.o src/EditorState.o src/GUIHelpers.o src/main.o src/MenuState.o src/NBEditor.o src/Node.o src/NodeBox.o src/NodeEditor.o src/Project.o src/util/string.cpp
-	g++ -o bin/nodeboxeditor src/FileFormat/FileFormat.o src/FileFormat/Lua.o src/FileFormat/MTC.o src/FileFormat/NBE.o src/Configuration.o src/Editor.o src/EditorState.o src/GUIHelpers.o src/main.o src/MenuState.o src/NBEditor.o src/Node.o src/NodeBox.o src/NodeEditor.o src/Project.o src/util/string.cpp -lIrrlicht -pthread
+	g++ -o bin/nodeboxeditor src/FileFormat/FileFormat.o src/FileFormat/Lua.o src/FileFormat/MTC.o src/FileFormat/NBE.o src/Configuration.o src/Editor.o src/EditorState.o src/GUIHelpers.o src/main.o src/MenuState.o src/NBEditor.o src/Node.o src/NodeBox.o src/NodeEditor.o src/Project.o src/util/string.cpp -lIrrlicht -lglut -lGLU -lGL -lm -pthread
 
 %.o: %.cpp
 	g++ -I/usr/include/irrlicht -o $@ -c $<	
